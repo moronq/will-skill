@@ -147,10 +147,18 @@
   padding: 0 15px;
 }
 
+@media (max-width: 1400px) {
+  .mainPostTitle {
+    max-width: rem(150);
+    font-size: rem(100);
+  }
+}
+
 @media (max-width: $mobileWidth) {
   .mainPostTitle {
     font-size: rem(80);
     line-height: 1.2;
+    max-width: auto;
   }
   .mainPostTitleDescription {
     max-width: rem(400);
@@ -193,6 +201,7 @@
   .mainPostTitle {
     text-align: center;
     font-size: rem(42);
+    max-width: 100%;
   }
   .mainPostTitleDescription {
     text-align: center;
