@@ -1,0 +1,212 @@
+@import 'src/constants.scss';
+
+.mainPostBackground {
+  background-image: url('./../../img/background.jpg');
+  background-position: 0 -80px;
+  background-repeat: no-repeat;
+  background-size: 100% 872px;
+}
+.mainPostContainer {
+  padding: 0 $containerPadding;
+  max-width: $maxWidthContainer;
+  margin: 0 auto;
+  height: 792px;
+  padding-top: 105px;
+  position: relative;
+}
+.mainPostTitle {
+  font-weight: 700;
+  line-height: rem(152);
+  font-size: rem(144);
+  color: white;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 25px;
+}
+.mainPostImage {
+  position: absolute;
+  bottom: -110px;
+  right: 40px;
+  z-index: 1;
+  max-width: 100%;
+}
+.mainPostTitleDescription {
+  font-size: rem(24);
+  max-width: rem(640);
+  margin-bottom: 120px;
+  position: relative;
+  z-index: 2;
+}
+.mainPostSecondTitle {
+  font-size: rem(36);
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+.mainPostSecondTitleDescription {
+  font-size: rem(18);
+  max-width: rem(350);
+  position: relative;
+  z-index: 2;
+}
+
+.postBodyBackground {
+  background-color: black;
+  color: white;
+}
+.postBodyContainer {
+  padding: 110px $containerPadding;
+}
+.postBodyTitle {
+  font-size: rem(48);
+  font-weight: 700;
+  max-width: rem(800);
+  margin: 0 auto rem(85);
+  text-align: center;
+  line-height: 1.2;
+  text-transform: uppercase;
+  & span {
+    color: #fcb500;
+  }
+}
+.postBodyPriceContainer {
+  display: flex;
+  justify-content: center;
+  gap: rem(32);
+  align-items: center;
+  margin-bottom: rem(60);
+}
+.postBodyOldPrice {
+  font-size: rem(36);
+  color: #adadad;
+  position: relative;
+  width: rem(112);
+  display: flex;
+  justify-content: center;
+  &::after {
+    content: '';
+    width: rem(112);
+    height: rem(2);
+    position: absolute;
+    background-color: #adadad;
+    top: 50%;
+    left: 0;
+  }
+}
+.postBodyNewPrice {
+  font-size: rem(48);
+}
+.postBodyList {
+  display: flex;
+  max-width: 1090px;
+  margin: 0 auto;
+  justify-content: space-between;
+  & li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: rem(64);
+    & img {
+      margin-bottom: rem(45);
+      max-width: 100%;
+    }
+    & p span {
+      color: #fcb500;
+    }
+  }
+}
+
+.itemNootrisTitle {
+  font-size: rem(36);
+  max-width: rem(420);
+  text-align: center;
+  line-height: 1.2;
+  & span {
+    font-size: rem(24);
+    color: #fcb500;
+  }
+}
+.itemGingerTitle,
+.itemVirusTitle {
+  max-width: rem(100);
+  text-align: center;
+  line-height: 1.2;
+}
+.button {
+  width: rem(256);
+  height: rem(56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcb500;
+  tab-size: rem(18);
+  border-radius: rem(6);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (max-width: $mobileWidth) {
+  .mainPostTitle {
+    font-size: rem(80);
+    line-height: 1.2;
+  }
+  .mainPostTitleDescription {
+    max-width: rem(400);
+  }
+}
+@media (max-width: 920px) {
+  .postBodyList {
+    flex-direction: column;
+    & .itemGinger {
+      order: 1;
+    }
+    & .itemGinger {
+      order: 2;
+    }
+  }
+  .button {
+    min-width: rem(300);
+    max-width: 100%;
+    height: rem(100);
+    font-size: rem(24);
+    border-radius: 12px;
+    border: 1px solid red;
+  }
+}
+@media (max-width: 800px) {
+  .mainPostTitle {
+    font-size: rem(50);
+    text-align: left;
+  }
+  .mainPostContainer {
+    padding-top: 15px;
+  }
+  .mainPostImage {
+    right: auto;
+    left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .mainPostTitle {
+    text-align: center;
+    font-size: rem(42);
+  }
+  .mainPostTitleDescription {
+    text-align: center;
+    margin: 0 auto 40px;
+    font-size: rem(24);
+  }
+  .mainPostSecondTitle {
+    max-width: rem(100);
+  }
+  .mainPostSecondTitleDescription {
+    max-width: rem(300);
+    font-size: rem(24);
+  }
+  .postBodyTitle {
+    font-size: rem(33);
+  }
+}

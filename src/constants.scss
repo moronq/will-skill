@@ -1,0 +1,10 @@
+@use 'sass:math';
+$maxWidthContainer: 1400px;
+$containerPadding: 44px;
+$mobileWidth: 1100px;
+
+//REM
+@function rem($px) {
+  $result: math.div($px, 16) + rem;
+  @return $result;
+}

@@ -1,0 +1,148 @@
+@import 'src/constants.scss';
+
+.header {
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  font-size: rem(18);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 2;
+  }
+}
+.headerLogo {
+  position: relative;
+  z-index: 3;
+}
+.headerBody {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.container {
+  max-width: $maxWidthContainer;
+  padding: 0 $containerPadding;
+  margin: 0 auto;
+}
+.headerNavContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+}
+.headerList {
+  display: flex;
+  flex-basis: 945px;
+  justify-content: space-between;
+}
+.headerList,
+.headerCart {
+  position: relative;
+  z-index: 2;
+}
+.headerCart {
+  margin-right: 24px;
+  & span {
+    position: absolute;
+    background-color: #fcb500;
+    height: rem(16);
+    width: rem(16);
+    border-radius: 50%;
+    font-size: rem(12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    right: -8px;
+    bottom: -7px;
+  }
+}
+.headerBurger {
+  background: transparent;
+  display: none;
+}
+@media (max-width: $mobileWidth) {
+  .headerLogo {
+    flex-grow: 1;
+  }
+  .headerBody {
+    height: 50px;
+  }
+  .headerBurger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: white;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease 0s;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    & span {
+      position: absolute;
+      background-color: white;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      top: 9px;
+      transition: all 0.3s ease 0s;
+    }
+  }
+  .headerBurger.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .headerBurger.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .headerBurger.active span {
+    transform: scale(0);
+  }
+  .headerNavContainer {
+    overflow: auto;
+    display: block;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    padding: 70px 40px 40px;
+    transition: all 0.3s ease 0s;
+    font-size: rem(24);
+  }
+  .headerNavContainer.active {
+    right: 0;
+  }
+  .headerList {
+    display: block;
+    & li {
+      margin-bottom: rem(30);
+    }
+  }
+}
